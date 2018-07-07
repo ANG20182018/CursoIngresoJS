@@ -1,36 +1,22 @@
 
 function mostrar()
 {
-	var numero1;
-	var numero2;
-	var numero3;
-	var suma;
-	var promedio;
-	var resta;
+	var base;
+	var altura;
+	var superficie;
+	var perimetro;
 
-	numero1=prompt("Ingrese valor 1");
-	numero1=parseInt(numero1);
-	numero2=prompt("Ingrese valor 2");
-	numero2=parseInt(numero2);
-	numero3=prompt("Ingrese valor 3");
-	numero3=parseInt("numero3");
+	base=prompt("Ingrese la base de su triangulo equilatero:");
+	base=parseInt(base);
+	altura=prompt("Ingrese la altura de su triangulo equilatero:");
+	altura=parseInt(altura);
 
-	suma=numero1+numero2+numero3;
-	promedio=(numero1+numero2+numero3)/3;
-	resta=numero1-numero2-numero3;
+	superficie= (base * altura)/2;
+	perimetro= base*3; 
 
-	alert("La suma" + suma + // etc con las otras   ver bien!! el promedio y la resta es igual a:");
-
-
-
+	alert("La superficie del triangulo equilatero es: " + superficie + "y su perimetro es: " + perimetro);
 
 }
 
-/*var base;
-	var altura;
-	var perimetro;
-	var superficie;
-
-	base=prompt("Ingresar la base del triangulo equilatero");
-	altura=prompt("Ingresar la altura del triangulo equilatero");*/
-//Se ingresan 3 numeros informar en un solo alert la suma, el promedio, y la resta de los numeros tal cual como fueron ingresados.
+/*BIEN HECHO EL EJERCICIO, SE ME COMPLICO CON EL TEMA DE LA TEORIA DE LOS TRIANGULOS,
+COMO ES UN TRIANGULO EQUILATERO LA BASE ES LO QUE NECESITO SOLO PARA SAVAR EL PERIMETRO.*/

@@ -1,8 +1,11 @@
 function mostrar()
 {
-	var nombre; //ME HABIA OLVIDADO DE PONER LAS VARIABLES, FIGURABAN EN LA VENTANA WEB...
-	var localidad;	
+  var nombre;
+  var localidad;
 
-    alert("usted es xxxxx y vive en la localidad de xxxxxxx:");
+  nombre=document.getElementById('elNombre').value;
+  localidad=document.getElementById('laLocalidad').value;
+
+  alert("Usted es: " + nombre + " y vive en la localidad de: " + localidad);
 
 }

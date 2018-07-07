@@ -1,18 +1,25 @@
 function mostrar()
 {
-	var preciooriginal; //IMPORTANTE, LAS VARIABLES NO SE ESCRIBEN CON ESPACIOS!
-	var porcentajedescuento;
-	var preciocondescuento;
+	var precio;
+	var porcentajeDescuento;
+	var descuentoenDinero;
+	var precioconDescuento;
 	var iva;
-	var preciofinal;
+	var elPrecioFinal;
 
-	preciooriginal=prompt("Ingresar el precio original:");
-	porcentajedescuento=prompt("Ingresar el porcentaje de descuento:");
+	precio=prompt("Ingrese el precio: ");
+	precio=parseInt(precio);
+	porcentajeDescuento=prompt("Ingrese el porcentaje de descuento: ");
+	porcentajeDescuento=parseInt(porcentajeDescuento);
 
-	preciocondescuento= (preciooriginal*porcentajedescuento)/100; // LA DIVISION SE PONE CON LA BARRA
-	iva= (preciooriginal *21)/100;
-	preciofinal= preciooriginal - preciocondescuento + iva;
+	descuentoenDinero=(porcentajeDescuento * precio) / 100;
+	precioconDescuento=precio - descuentoenDinero;
+	iva= (precio*21) / 100;
+	elPrecioFinal= precioconDescuento + iva;
 
-	//FALTO TERMINAR...PERO PARECE ESTAR OK
-	
+	alert("El descuento en dinero es de: " + descuentoenDinero + " El precio con el descuento es: " + precioconDescuento + " El iva es :" + iva);
+
+	document.getElementById('elPrecioFinal').value=elPrecioFinal;
+
+
 }
