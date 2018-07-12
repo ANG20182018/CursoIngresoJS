@@ -1,8 +1,39 @@
 function mostrar()
 {
-//tomo la edad  
+	var edad;
 
+	edad=document.getElementById('edad').value;
+
+	if(edad>=18)
+	{
+		alert("La persona es mayor de edad"); // OJO PARA ORDENAR BIEN EL PROGRAMA, AL ABRIR UNA LLAVE { SE TOCA ENTER...Y TE LO ORDENA SOLO!!
+	}  //SUP IMP VER ORDENAMIENTO...
+	else
+	{
+
+		if(edad>=13 && edad <=17)
+		{
+			alert("La persona es adolescente");
+		}
+		//if(edad<13) // EN EL EJEMPLO EN CLASE ACA PUSO ELSE...VER COMO HACERLO
+		else //OJO ASI SE HACE OK...QUEDA MUCHO MAS PROLIJO, ANDA OK POR QUE TODO EL RANGO DE EDAD QUEDO LIMITADO OK!
+		{
+			alert("La persona es un menor de edad");
+		}	
+	}
 
 
 
 }//FIN DE LA FUNCIÓN
+
+/* SE PUEDEN HACER 3 IF SEGUIDOS IF, IF , IF...NO SE PUEDE USAR ASI POR QUE SE TRABAJO SOBRE LA MISMA VARIABLE...
+	NO SE PUEDE HACER ASI POR QUE SE EJECUTA TODO, NO VA CON 3 IF, CON ELSE IF TAMPOCO
+	NO SE USAN TODO IF POR QUE ES MAS DIFICIL DE PROCESAR
+	
+	CON 2 IF ELSE SE ANALIZAN 3 CASOS..
+
+	 OJO PARA ORDENAR BIEN EL PROGRAMA, AL ABRIR UNA LLAVE { SE TOCA ENTER...Y TE LO ORDENA SOLO!!
+	 SUP IMP VER ORDENAMIENTO...
+
+
+*/
