@@ -8,9 +8,7 @@ function mostrar()
 	{
 		alert("Excelente" + nota);
 	}
-	else
-	{
-		if(nota>=4)
+	else if(nota>=4)
 	{
 		alert("Aprobo" + nota);
 	}
@@ -18,6 +16,6 @@ function mostrar()
 	{
 		alert("Desaprobo" + nota);
 	}
-	}
+	
 
 }//FIN DE LA FUNCIÓN
