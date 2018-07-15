@@ -10,90 +10,75 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	var precio;
  	var cantidad;
- 	var marcas;
- 	//var precioDescuento; va o no?? /LA SOLUCION ES ANIDAR LOS IF Y LOS ELSE!
+ 	var precio;
+ 	var marca;
+ 	
 
- 	precio=35; // siempre que es un numero se recomienda parsearlo!
- 	precio=parseInt(precio);
-  	cantidad=document.getElementById('Cantidad').value;
+ 	                //para definir las variables primero miras en la web para determinar los cuadros de texto q reciben info, despues el html y despues el ejercicio.
+
+ 	
+ 	cantidad=document.getElementById('Cantidad').value; //aca a diferencia de los otros, te pone las comillas solas!! en los otros GDBID hay q ponerselas!
  	cantidad=parseInt(cantidad);
- 	marcas=document.getElementById('Marca').value;
-
+ 	precio=(cantidad * 35); // SI VOY A HACER ESTO PRIMERO TIENE Q ESTAR DEFINIDA LA VARIABLE CANTIDAD Y DSP PRECIO...
+ 	precio=parseInt(precio);
+ 	marca=document.getElementById('Marca').value;
  	
- 	if(cantidad >= 6) 
+ 	
+ 	if (cantidad>=6)
+ 	{	
+ 		 precioconDescuento=precio * 0.5; //es mas facil expresar el porcentaje asi que hacer toda la cuenta *100/100, esto es el resultado directo de esa cuenta!
+  	}
+  	else if (cantidad==5 && marca=="ArgentinaLuz")
+  	{
+  		 precioconDescuento=precio * 0.6;
+  	}
+ 	else if (cantidad==5 && marca!="ArgentinaLuz")
  	{
- 		document.getElementById('precioDescuento').value= (precio * cantidad) * 50 /100;
+ 		precioconDescuento=precio * 0.7;
+ 	}
+ 	else if (cantidad==4 && (marca== "ArgentinaLuz" || marca=="FelipeLamparas"))
+	{
+ 		precioconDescuento=precio * 0.75; //ojo aca con los porcentajes resolver cuenta( x 75 / 100) y es el total
+ 	}
+	else if (cantidad==4 && (marca!= "ArgentinaLuz" || marca!="FelipeLamparas")) //no se si hay otra forma de plantearlo sin repetir y poner !=, si ponia else aca se caia el programa y no lo concatenaba.
+	{
+ 		precioconDescuento=precio * 0.8;
+ 	}
+ 	else if (cantidad==3 && marca=="ArgentinaLuz")
+	{
+ 		precioconDescuento=precio * 0.85;
+ 	}
+ 	else if (cantidad==3 && marca== "FelipeLamparas")
+	{
+ 		precioconDescuento=precio * 0.90;
+ 	}
+ 	else if (cantidad==3 && (marca!= "ArgentinaLuz" || marca!="FelipeLamparas"))
+	{
+ 		precioconDescuento=precio * 0.95;
+ 	}
+ 	else if (cantidad <3) // aca tampoco puede hacer un else te arruina el codigo! /VER ESTO!
+ 	{
+ 		precioconDescuento=precio;
  	}
 
- 					
- 	else if(cantidad == 5 && marcas =="ArgentinaLuz") //el error esta en que ejecuta el if 1, despues pasa al if 2 y como es false ejecuta el else, en los errores aparecen todas las ejecuciones del else...
- 	{
- 		document.getElementById('precioDescuento').value= (precio * cantidad) * 60 /100; // warda con los porcentajes!
+ 	if (precioconDescuento > 120) 	//VER SI ESTA UBICADO OK ACA ESTA PARTE! Y SI EL CUADRO DE ALERT SALE CORRECTAMENTE COMO LO QUIEREN!
+	{
+ 		IIBB= (precioconDescuento * 1.1) - precioconDescuento; //SI EN ESTA LINEA PONES UN ELSE IF NO ALNDA!
+ 		alert("Usted pago: " + IIBB + " de IIBB");
  	}
- 	else
- 			{
- 				document.getElementById('precioDescuento').value= (precio * cantidad) * 70/100; // aca hay un desc del 30!!
- 			}
+
+  	 document.getElementById('precioDescuento').value=precioconDescuento;  
+
+  	  	
+}
+
+
 	
+	/* yo repetia en todas las lineas lo mismo, el simplifico en la variable precio (precio * cantidad) que yo repetia, por q el mismo esta atado a la cantidad!
+
+	(precio * cantidad) * 60 / 100; //WARDA CON EL CALCULO DE LOS PORCENTAJES!
  	
- 	if(cantidad==4 && (marcas == "ArgentinaLuz" || marcas=="FelipeLamparas")) //me faltaba cerrar el parentesis! y repetir marcas, sino no lo leia!!ojo super imppp!!
- 	{
- 		document.getElementById('precioDescuento').value= (precio * cantidad) * 75/100;
- 	}
- 	else
- 			{
- 				document.getElementById('precioDescuento').value= (precio * cantidad) * 80/100;
- 			}
-
-
- 	if(cantidad==3 && marcas== "ArgentinaLuz")
- 	{
- 		document.getElementById('precioDescuento').value= (precio * cantidad) * 85/100;
- 	}
  	
- 	else if (cantidad==3 && marcas=="FelipeLamparas")
- 			{
- 				document.getElementById('precioDescuento').value= (precio * cantidad) * 90/100;
- 			}
+ 	} */
  	
- 	else
- 			{
- 				document.getElementById('precioDescuento').value= (precio * cantidad) * 95/100;
- 			}
- 	
-
- 	 }
- 	
-
-
-    /*SUPER IMPORTANTE ! UNO SOLO ES PARA NEGARLO, PARA NEGAR LA FRASE   EJ: SE PONE ENTRE UNA ECUACION ANTES DE TODO, Y SI LA ECUACION DA TRUE, LO CONVIERTE EN FALSE
-
-		if ((document.getElementById('precioDescuento').value) > 120 )
-
- 			
- 				document.getElementById('precioDescuento').value= (document.getElementById('precioDescuento').value) * 110/100;
- 				alert(" Se agrego 10% mas de IIBB");
-
-
-// los if se separan en condiciones, pero si la condicion incluye lo mismo se hace if else, pero no hay que hacer if else sino comparten condicion!
-//si te equivocas y pones ; aca se ejecuta la parte de abajo aisladamente...
-    
-	explicacion en clase de apoyo:
-
-	EL DEFINIO VAR PRECIO BRUTO=(CANTIDAD DE LAMPARAS X 35) OJOOOO SUPPPPP IMP
-
-	ESTABLECIO: TOTAL CON DESCUENTO = TOTAL BRUTO - DESCUENTO;
-
-	Y MUESTRA UNICAMENTE AL FINAL UN SOLO GET ELEMENT= TOTAL CON DESCUENTO  SUP IMP!
-
-	IF CONDICION=
-
-	DESCUENTO= TOTAL BRUTO * 0.5 (PARA HACER EL 50% DE DESCUENTO) (0.4 X PRECIO BRUTO PARA SACAR EL 40% DE DESCUENTO!)
-	(EL VALOR DE DESCUENTO SE LO DA DESPUES DE LA EJECUCUIN DEL IF)
-
-
-    */
-
-
