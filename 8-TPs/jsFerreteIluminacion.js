@@ -10,13 +10,9 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	var cantidad;
+ 	var cantidad; ///para definir las variables primero miras en la web para determinar los cuadros de texto q reciben info, despues el html y despues el ejercicio.
  	var precio;
- 	var marca;
- 	
-
- 	                //para definir las variables primero miras en la web para determinar los cuadros de texto q reciben info, despues el html y despues el ejercicio.
-
+ 	var marca;          
  	
  	cantidad=document.getElementById('Cantidad').value; //aca a diferencia de los otros, te pone las comillas solas!! en los otros GDBID hay q ponerselas!
  	cantidad=parseInt(cantidad);
@@ -68,10 +64,47 @@ function CalcularPrecio ()
  		alert("Usted pago: " + IIBB + " de IIBB");
  	}
 
-  	 document.getElementById('precioDescuento').value=precioconDescuento;  
+  	 document.getElementById('precioDescuento').value=precioconDescuento;
 
-  	  	
-}
+  	 }
+  	
+
+  	/* //LA SEGUNDA FORMA DE HACERLO! VER CUAL ESTA OK!
+
+  	 if (cantidad>=6)
+ 	{	
+ 		 precioconDescuento=precio * 0.5;
+ 	}
+ 	else 
+ 	{	
+ 	if (cantidad==5)
+ 	{
+  		if (marca=="ArgentinaLuz") 
+  	{
+  			precioconDescuento=precio * 0.6;
+  	}
+  		else
+  	{
+  			precioconDescuento=precio * 0.7;
+  	}
+  	}
+ 	if (cantidad==4)
+ 	{
+ 		if(marca== "ArgentinaLuz" || marca=="FelipeLamparas")
+ 	{
+ 		precioconDescuento=precio * 0.75;
+ 	}
+ 		else
+ 	{	
+ 		precioconDescuento=precio * 0.8;
+ 	}
+
+ 	}
+ 	
+ 	
+	}
+
+	document.getElementById('precioDescuento').value=precioconDescuento;*/
 
 
 	
