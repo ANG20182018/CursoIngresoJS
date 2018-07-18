@@ -5,25 +5,72 @@ El jugador seleccionará una imagen correspondiente
 a su opción  y le informaremos si ganó, empató o perdió.
 */
 var eleccionMaquina;
+var piedra;
+var papel;
+var tijera;
 
 function comenzar()
 {
+	eleccionMaquina= Math.floor(Math.random() * 3) + 1;
 	
-
-
-}//FIN DE LA FUNCIÓN
+	if (eleccionMaquina==1)
+	{
+		eleccionMaquina=piedra;
+	}
+	else if (eleccionMaquina==2)
+	{
+		eleccionMaquina=papel;
+	}
+	else
+	{
+		eleccionMaquina=tijera;
+	}
+}
 function piedra()
 {
-	
+	if (piedra==piedra)
+	{
+		alert("Piedra y Piedra, empato...");
+	}
+	else if (piedra && papel)
+	{
+		alert("Piedra y papel, perdio...");
+	}
+	else
+	{
+		alert("Piedra y tijera, gano...");
+	}
+}
 
-}//FIN DE LA FUNCIÓN
 function papel()
 {
+	if (papel==papel)
+	{
+		alert("Papel y papel, empato...");
+	}
+	else if (papel && tijera)
+	{
+		alert("Papel y tijera, perdio...");
+	}
+	else
+	{
+		alert("Papel y piedra, gano...");
+	}
+}
 
-
-}//FIN DE LA FUNCIÓN
 function tijera()
 {
+	if (tijera==tijera)
+	{
+		alert("Tijera y Tijera, empato...");
+	}
+	else if (tijera && piedra)
+	{
+		alert("Tijera y piedra, perdio...");
+	}
+	else
+	{
+		alert("Tijera y papel, gano...");
+	}
 	
-
-}//FIN DE LA FUNCIÓN
+}
