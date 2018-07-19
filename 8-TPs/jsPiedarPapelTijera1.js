@@ -5,34 +5,22 @@ El jugador seleccionará una imagen correspondiente
 a su opción  y le informaremos si ganó, empató o perdió.
 */
 var eleccionMaquina;
-var piedra;
-var papel;
-var tijera;
 
 function comenzar()
 {
 	eleccionMaquina= Math.floor(Math.random() * 3) + 1;
 	
-	if (eleccionMaquina==1)
-	{
-		eleccionMaquina=piedra;
-	}
-	else if (eleccionMaquina==2)
-	{
-		eleccionMaquina=papel;
-	}
-	else
-	{
-		eleccionMaquina=tijera;
-	}
+	
+	alert(eleccionMaquina); // usar alert para ver si anda ok..., me habia olvidado de hacer esto y no te mostraba que hacia en la consola...
 }
-function piedra()
+function piedra()						//en este ejercicio me complique al pedo, siempre hay que simplificar lo maximo posible...aca ya tenia piedra no hace falta usar conectores...
 {
-	if (piedra==piedra)
+	
+	if (eleccionMaquina==1)
 	{
 		alert("Piedra y Piedra, empato...");
 	}
-	else if (piedra && papel)
+	else if (eleccionMaquina==2)
 	{
 		alert("Piedra y papel, perdio...");
 	}
@@ -44,11 +32,11 @@ function piedra()
 
 function papel()
 {
-	if (papel==papel)
+	if (eleccionMaquina==2)
 	{
 		alert("Papel y papel, empato...");
 	}
-	else if (papel && tijera)
+	else if (eleccionMaquina ==3)
 	{
 		alert("Papel y tijera, perdio...");
 	}
@@ -60,11 +48,11 @@ function papel()
 
 function tijera()
 {
-	if (tijera==tijera)
+	if (eleccionMaquina==3)
 	{
 		alert("Tijera y Tijera, empato...");
 	}
-	else if (tijera && piedra)
+	else if (eleccionMaquina==1)
 	{
 		alert("Tijera y piedra, perdio...");
 	}
