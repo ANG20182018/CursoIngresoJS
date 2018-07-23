@@ -9,6 +9,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
  */
 function CalcularPrecio () 
+ 
 {
  	var cantidad; ///para definir las variables primero miras en la web para determinar los cuadros de texto q reciben info, despues el html y despues el ejercicio.
  	var precio;
@@ -17,7 +18,7 @@ function CalcularPrecio ()
  	cantidad=document.getElementById('Cantidad').value; //aca a diferencia de los otros, te pone las comillas solas!! en los otros GDBID hay q ponerselas!
  	cantidad=parseInt(cantidad);
  	precio=(cantidad * 35); // SI VOY A HACER ESTO PRIMERO TIENE Q ESTAR DEFINIDA LA VARIABLE CANTIDAD Y DSP PRECIO...
- 	precio=parseInt(precio);
+ 	precio=parseInt(precio); //ellos a esta variable la llamaron precio bruto...
  	marca=document.getElementById('Marca').value;
  	
  	
@@ -29,7 +30,7 @@ function CalcularPrecio ()
   	{
   		 precioconDescuento=precio * 0.6;
   	}
- 	else if (cantidad==5 && marca!="ArgentinaLuz")
+ 	else if (cantidad==5) // asi se hace!!!!&& marca!="ArgentinaLuz") // OJOOOO ACA ESTABA MAL, NO HACE FALTA PONER ESTA PARTE POR QUE SOLO SI ES ARGENLUZ LEE ARRIBA SOLO...
  	{
  		precioconDescuento=precio * 0.7;
  	}
@@ -37,7 +38,7 @@ function CalcularPrecio ()
 	{
  		precioconDescuento=precio * 0.75; //ojo aca con los porcentajes resolver cuenta( x 75 / 100) y es el total
  	}
-	else if (cantidad==4 && (marca!= "ArgentinaLuz" || marca!="FelipeLamparas")) //no se si hay otra forma de plantearlo sin repetir y poner !=, si ponia else aca se caia el programa y no lo concatenaba.
+	else if (cantidad==4) // && (marca!= "ArgentinaLuz" || marca!="FelipeLamparas")) //no se si hay otra forma de plantearlo sin repetir y poner !=, si ponia else aca se caia el programa y no lo concatenaba.
 	{
  		precioconDescuento=precio * 0.8;
  	}
@@ -49,7 +50,7 @@ function CalcularPrecio ()
 	{
  		precioconDescuento=precio * 0.90;
  	}
- 	else if (cantidad==3 && (marca!= "ArgentinaLuz" || marca!="FelipeLamparas"))
+ 	else if (cantidad==3) // && (marca!= "ArgentinaLuz" || marca!="FelipeLamparas")) OJO CON ESTO, SI YA ENTRO ANTES ES OK NO HACE FALTA HACER DIFERENTE!
 	{
  		precioconDescuento=precio * 0.95;
  	}
@@ -61,57 +62,12 @@ function CalcularPrecio ()
  	if (precioconDescuento > 120) 	//VER SI ESTA UBICADO OK ACA ESTA PARTE! Y SI EL CUADRO DE ALERT SALE CORRECTAMENTE COMO LO QUIEREN!
 	{
  		IIBB= (precioconDescuento * 1.1) - precioconDescuento; //SI EN ESTA LINEA PONES UN ELSE IF NO ALNDA!
- 		alert("Usted pago: " + IIBB + " de IIBB");
- 	}
+ 		alert("Usted pago: " + IIBB + " de IIBB"); //aca lo multiplicaron x 0.1...OJOOOO MULTIPLICAR X 0.1 Y SIMPLIFICAS TODO!
+ 	}												// te saca solo los IIBB!!!! TENER CLARO ESTO!
 
   	 document.getElementById('precioDescuento').value=precioconDescuento;
 
-  	 }
-  	
 
-  	/* //LA SEGUNDA FORMA DE HACERLO! VER CUAL ESTA OK!
+//el hizo la variable precio final =precio bruto - descuento...despues calculo IIBB: 
 
-  	 if (cantidad>=6)
- 	{	
- 		 precioconDescuento=precio * 0.5;
- 	}
- 	else 
- 	{	
- 	if (cantidad==5)
- 	{
-  		if (marca=="ArgentinaLuz") 
-  	{
-  			precioconDescuento=precio * 0.6;
-  	}
-  		else
-  	{
-  			precioconDescuento=precio * 0.7;
-  	}
-  	}
- 	if (cantidad==4)
- 	{
- 		if(marca== "ArgentinaLuz" || marca=="FelipeLamparas")
- 	{
- 		precioconDescuento=precio * 0.75;
- 	}
- 		else
- 	{	
- 		precioconDescuento=precio * 0.8;
- 	}
-
- 	}
- 	
- 	
-	}
-
-	document.getElementById('precioDescuento').value=precioconDescuento;*/
-
-
-	
-	/* yo repetia en todas las lineas lo mismo, el simplifico en la variable precio (precio * cantidad) que yo repetia, por q el mismo esta atado a la cantidad!
-
-	(precio * cantidad) * 60 / 100; //WARDA CON EL CALCULO DE LOS PORCENTAJES!
- 	
- 	
- 	} */
- 	
+}

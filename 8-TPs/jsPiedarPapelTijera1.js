@@ -7,15 +7,16 @@ a su opción  y le informaremos si ganó, empató o perdió.
 var eleccionMaquina;
 
 function comenzar()
+{eleccionMaquina= Math.floor(Math.random() * 3) + 1;
+	
+	
+	alert(eleccionMaquina);
+	
+
+
+}//FIN DE LA FUNCIÓN
+function piedra()
 {
-	eleccionMaquina= Math.floor(Math.random() * 3) + 1;
-	
-	
-	alert(eleccionMaquina); // usar alert para ver si anda ok..., me habia olvidado de hacer esto y no te mostraba que hacia en la consola...
-}
-function piedra()						//en este ejercicio me complique al pedo, siempre hay que simplificar lo maximo posible...aca ya tenia piedra no hace falta usar conectores...
-{
-	
 	if (eleccionMaquina==1)
 	{
 		alert("Piedra y Piedra, empato...");
@@ -27,9 +28,8 @@ function piedra()						//en este ejercicio me complique al pedo, siempre hay que
 	else
 	{
 		alert("Piedra y tijera, gano...");
-	}
-}
 
+}//FIN DE LA FUNCIÓN
 function papel()
 {
 	if (eleccionMaquina==2)
@@ -44,8 +44,8 @@ function papel()
 	{
 		alert("Papel y piedra, gano...");
 	}
-}
 
+}//FIN DE LA FUNCIÓN
 function tijera()
 {
 	if (eleccionMaquina==3)
@@ -60,5 +60,5 @@ function tijera()
 	{
 		alert("Tijera y papel, gano...");
 	}
-	
-}
+
+}//FIN DE LA FUNCIÓN
