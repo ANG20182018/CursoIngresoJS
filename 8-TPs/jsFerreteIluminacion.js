@@ -9,8 +9,82 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
  */
 function CalcularPrecio () 
- 
-{
+ {
+ 	var cantidad; ///para definir las variables primero miras en la web para determinar los cuadros de texto q reciben info, despues el html y despues el ejercicio.
+ 	var precio;
+ 	var marca;          
+ 	
+ 	cantidad=document.getElementById('Cantidad').value; //aca a diferencia de los otros, te pone las comillas solas!! en los otros GDBID hay q ponerselas!
+ 	cantidad=parseInt(cantidad);
+ 	precio=(cantidad * 35); // SI VOY A HACER ESTO PRIMERO TIENE Q ESTAR DEFINIDA LA VARIABLE CANTIDAD Y DSP PRECIO...
+ 	precio=parseInt(precio); //ellos a esta variable la llamaron precio bruto...
+ 	marca=document.getElementById('Marca').value;
+
+ 	switch(cantidad) 	
+ 	{
+ 								// POR QUE ES LO QUE TE PIDE EL EJERCICIO...DESCUENTO ES LO QUE HAY QUE CALCULAR...
+ 		case 1: //aca determino la cantidad de lamparas...si no esta parseado poner ""...ojo!!!!
+ 		case 2:
+ 			precioconDescuento=precio * 1;
+ 			break;
+ 		
+ 		case 3: //aca se hace otro switch por que en la consigna te pide diferenciar las marcas!!
+ 			switch(marca)
+ 			{
+ 				case "ArgentinaLuz":
+ 					precioconDescuento=precio* 0.85;
+ 					break;
+ 				case "FelipeLamparas":
+ 					precioconDescuento=precio * 0.90;
+ 					break;
+ 				default:
+ 					precioconDescuento=precio * 0.95;
+ 					break;
+ 			}
+ 		case 4: //ACA ES CUANDO ES CANTIDAD=4..
+ 			switch(marca)
+ 			{
+ 				case "ArgentinaLuz":	
+ 				case "FelipeLamparas":
+ 					precioconDescuento=precio * 0.75;
+ 					break;
+ 				default:
+ 					precioconDescuento=precio * 0.80;
+ 					break;
+ 			}
+ 		case 5:
+ 			switch(marca)
+ 			{
+ 				case "ArgentinaLuz":	
+ 					precioconDescuento=precio * 0.60;
+ 					break;
+ 				default:
+ 					precioconDescuento=precio * 0.70;
+ 					break;
+ 			}
+
+
+
+ 	}
+
+
+document.getElementById('precioDescuento').value=precioconDescuento;
+
+
+
+ }
+
+/*PRUEBAS DE ESCRITORIO!!! OJOOO
+PENSAR COMO TE TIENE QUE DAR 1 LAMPARITA 35, 2 70...AHORA SE LLAMAN TESTING...
+SE EVALUA LO Q LE DAS Y LO QUE TE DEVUELVE...EL TEST YA ESTA HECHO...
+SI SE HACEN TODOS LOS RESULTADOS Y SE PONEN EN LA PRUEBA DE ESCRITORIO YA SE SABEN TODOS LOS RESULTADOS, SE LO CONSTATA CON ESO Y TE FIJAS SI ESTAS PROGRAMANDO OK!
+SE HACE AUTOMATICAMENTE...EN UN EXCEL O EN LAPIZ...ES PARA SABER SI LO QUE HACES ESTA OK!! SI EL PROGRAMA FUNCIONA!
+
+*/
+
+
+//ACA ESTA HECHO CON IF, HAY QUE HACERLOS CON SWITCH TMB...
+/*{
  	var cantidad; ///para definir las variables primero miras en la web para determinar los cuadros de texto q reciben info, despues el html y despues el ejercicio.
  	var precio;
  	var marca;          
@@ -71,3 +145,4 @@ function CalcularPrecio ()
 //el hizo la variable precio final =precio bruto - descuento...despues calculo IIBB: 
 
 }
+*/
