@@ -1,7 +1,25 @@
 function mostrar()
 {
 
-var clave = prompt("ingrese el número clave.");
+var clave;
+
+//clave = prompt("ingrese el número clave");  //PARA SACAR ESA LINEA LO BORRAS Y LISTO POR QUE LA VAR CLAVE QUEDA UNDEFINED, MIENTRAS SEA DIF A LA QUE TE DAN ES OK!
+
+while (clave != "utn750") // ojo esto es un string!!! OJOOOOO!!
+{
+	clave = prompt("ingrese el número clave");
+}
 
 
-}//FIN DE LA FUNCIÓN
+}
+
+
+
+
+
+/*
+VALIDACION DE DATOS, CLAVE OK UTN 750, SE CHEQUEA SI ES LA CORRECTA, SE PREGUNTA SI ESO ESTA MAL, 
+Y SE REPITE HASTA QUE ESTE OK....CUANDO ESTA OK TIENE Q SER V Y SALIR...
+SE VALIDA CON WHILE Y NO CON IF POR QUE HAY QUE HACER INFINITOS IF...., SE HACE CON WHILE....Y SIEMPRE SE PONE EN LA CONDICION LO OPUESTO...
+
+*/
