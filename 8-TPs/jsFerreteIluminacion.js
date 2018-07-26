@@ -28,7 +28,8 @@ function CalcularPrecio ()
  			precioconDescuento=precio * 1;
  			break;
  		
- 		case 3: //aca se hace otro switch por que en la consigna te pide diferenciar las marcas!!
+ 		case 3: 
+ 		   //OJO ME FALTARON LOS BREAK ACA!!! //aca se hace otro switch por que en la consigna te pide diferenciar las marcas!!
  			switch(marca)
  			{
  				case "ArgentinaLuz":
@@ -41,7 +42,9 @@ function CalcularPrecio ()
  					precioconDescuento=precio * 0.95;
  					break;
  			}
- 		case 4: //ACA ES CUANDO ES CANTIDAD=4..
+ 			break; //OJO ME FALTARON LOS BREAK ACA!!!
+ 		case 4:
+ 		 //ACA ES CUANDO ES CANTIDAD=4.. ///
  			switch(marca)
  			{
  				case "ArgentinaLuz":	
@@ -52,7 +55,9 @@ function CalcularPrecio ()
  					precioconDescuento=precio * 0.80;
  					break;
  			}
+ 			break; //OJO ME FALTARON LOS BREAK ACA!!!
  		case 5:
+ 		
  			switch(marca)
  			{
  				case "ArgentinaLuz":	
@@ -62,6 +67,12 @@ function CalcularPrecio ()
  					precioconDescuento=precio * 0.70;
  					break;
  			}
+ 			break; //OJO ME FALTARON LOS BREAK ACA!!!
+ 		default:
+
+ 			precioconDescuento=precio * 0.50;
+ 			alert("d");
+ 			break;
 
 
 
