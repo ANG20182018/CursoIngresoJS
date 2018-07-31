@@ -1,18 +1,99 @@
-function mostrar()
+/*
+JOSE M 25
+MARIA F 18
+JESUS M 33
+FER F 81
+
+BASAR EL EJERCICIO EN ESTOS DATOS, NOMBRE, SEXO Y EDAD...
+*/function mostrar()
 
 {
+	var nombre; //no hace falta validar...
 	var notas;
-	var sexo; // = true;
-	var contador =0;
-	var acumulador = 0;
-	var maximo;
-	var minimo;
+	var sexo; // = true; validado por f o m
+	var edad;
+	var contador = 0;
+	var contadorDeMujeres =0;
+	var contadorDeHombres = 0;
+	var contadorMayorDeEdad = 0;
+	var contadorMenorDeEdad = 0;
+	var edadMaximo;
+	var edadMinimo;
+
+	//OJOOO SE ESCRIBE contadorDeMujeres, contadorDeHombres, completo y respetando esa logica...ojjjjjjo!
+
+while (contador < 4) // OJO ACA ESTA LA FORMA VALIDADA QUE SE USA SIEMPRE PARA SEXO Y EDAD!
+{	
+	contador ++;
+
+	nombre=prompt ("Ingrese su nombre...");
+
+	sexo = prompt ("Ingrese su sexo: "); // OJO PARA VALIDAR ESTO ME FALTABA LA FRASE DE ARRIBA... PARA VALIDAR ESTA FRASE SE REPITA DENTRO DE LA CONDICION NEGADA DEL WHILE...
+
+		while (sexo != "m" && sexo != "f") // ACA SE VALIDA CON && EN EL SEXO, DE LA OTRA FORMA NO DEJA DE REPETIR...
+		{	
+		sexo= prompt ("Ingrese su sexo: ");
+		}
+	
+	edad= prompt ("Ingrese su edad"); //SUPER IMPPPPP VER EL ISNAN..., ES POR SI INGRESAN CUALQUIER COSA, SE DEFINE COMO NAN Y EL PROGRAMA REPITE SI PASA ESO...
+	edad=parseInt(edad);
+		
+		while (isNaN (edad) || edad <0 || edad > 100) //OJOOOOOO EL ISNAN EVITA QUE INGRESE ALGO QUE NO SON NUMEROS!
+		{
+			edad= prompt ("Ingrese su edad"); // SE REPITE LA MISMA FRASE DENTRO DE CADA VALIDACION!
+			edad=parseInt(edad);
+		}
+
+	
+	if (sexo == "m")
+	{
+		contadorDeHombres ++;
+	}
+	else
+	{
+		contadorDeMujeres ++;
+	}
+
+	
+	if (edad >= 18 )
+	{
+		contadorMayorDeEdad ++;
+	}
+	else //ACA SE PUEDE HACER ESTE ELSE POR QUE YA TENES LA EDAD VALIDADA ANTERIORMENTE!
+	{
+		contadorMenorDeEdad ++;
+	}
+
+	//ACA VAN LAS NOTAS MAS ALTAS Y LAS MAS BAJAS!
+
+	if (contador ==1) //REVISAR ALGO ESTA MAL...VER!!!
+		{
+			edad=edadMaximo;
+			edad=edadMinimo;
+		}
+		else if (edad > edadMinimo)
+		{
+			edad=edadMaximo;
+		}
+		else if (edad < edadMaximo)
+		{
+			edad =edadMinimo;
+		}
+
+}
+
+document.write(" <br> contador De Mujeres" + contadorDeMujeres); //EL BR SE PONE ADELANTE!!!
+document.write(" <br> contadorDe Hombres " + contadorDeHombres);
+document.write(" <br> contador mayor de edad" + contadorMayorDeEdad);
+document.write(" <br> contador Menor DeEdad" + contadorMenorDeEdad);
+document.write(" <br> Edad mas alta" + edadMaximo + "Edad mas baja" + edadMinimo);
+
 
 //NO LO PUDE HACER: 1) NO SE SI SE PUEDE USAR WHILE DENTRO DE WHILE Y SI SE PUEDE VALIDAR USANDO IF...
 // 2) NO SE COMO HACER PARA UNIFICAR DATOS DE 2 TIPOS DIFERENTES, SEXO Y NOTA, GUARDARLOS POR SEPARADO Y MOSTRARLOS...
 
 
-	while (contador < 5 ) // ES MEJOR HACERLO WILE E IF, NO SE SI SE PUEDEN HACER WHILE WHILE...
+	/*while (contador < 5 ) // ES MEJOR HACERLO WILE E IF, NO SE SI SE PUEDEN HACER WHILE WHILE...
 	{	
 		contador ++;
 		notas=prompt( "Ingrese notas: ");
@@ -42,7 +123,7 @@ function mostrar()
 		} */
 		
 		
-		if (contador ==1)
+		/*if (contador ==1)
 		{
 			notas=maximo;
 			notas=minimo;
