@@ -2,7 +2,7 @@ function mostrar()
 
 {
 	var notas;
-	var sexo;
+	var sexo; // = true;
 	var contador =0;
 	var acumulador = 0;
 	var maximo;
@@ -16,18 +16,30 @@ function mostrar()
 	{	
 		contador ++;
 		notas=prompt( "Ingrese notas: ");
-		notas=parseInt(notas);
-		sexo= prompt ("Ingrese su sexo: ");
+		notas=parseInt(notas); // OJO ACA HAY QUE VALIDAR LAS NOTAS Y EL SEXO, O SEA QUE INGRESEN NUMEROS EN UNA Y EN LA OTRA LETRAS!
+		
+		while(isNaN(notas))
+		{
+			notas=prompt( "Ingrese notas: ");
+			notas=parseInt(notas);
+		}
 
+		sexo= prompt ("Ingrese su sexo: "); // OJO PARA VALIDAR ESTO ME FALTABA LA FRASE DE ARRIBA...
+
+		while (sexo != "m" || sexo != "f")
+		{	
+		sexo= prompt ("Ingrese su sexo: ");
+		}
+		
 		if ((notas >= 0 && notas <= 10) && (sexo == "m" || sexo == "f"))
 		{
 			acumulador= acumulador + notas;
 		}
-		else
+		/*else // OJOOO VER COMO SE VALIDA BIEN, SE VALIDA ARRIBA LA VARIABLE SEXO, Y SI NO INGRESA UNA LETRA OK, SE LE REPREGUNTA...
 		{
-			alert("No ingreso una nota  o un sexo valido...");
+			alert("No ingreso una nota  o un sexo valido..."); // asi no se valida, se valida arriba abajo de la variable sexo...
 			contador= contador -1;
-		}
+		} */
 		
 		
 		if (contador ==1)
