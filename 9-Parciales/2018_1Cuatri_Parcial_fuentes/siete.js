@@ -19,6 +19,8 @@ BASAR EL EJERCICIO EN ESTOS DATOS, NOMBRE, SEXO Y EDAD...
 	var contadorMenorDeEdad = 0;
 	var edadMaximo;
 	var edadMinimo;
+	var nombreMayor;
+	var edadMaximoFem;
 
 	//OJOOO SE ESCRIBE contadorDeMujeres, contadorDeHombres, completo y respetando esa logica...ojjjjjjo!
 
@@ -52,6 +54,13 @@ while (contador < 4) // OJO ACA ESTA LA FORMA VALIDADA QUE SE USA SIEMPRE PARA S
 	else
 	{
 		contadorDeMujeres ++;
+									//ojooooESTO ES DE OTRO EJ...TOMARLO COMO EJ! ES DEL EJERCICIO DONDE TE PIDE EDAD MAXIMA MUJERES!1 Y DIF HOMBRES!S
+		/*if ( edad > edadMaximoFem) //ESTA OK ESTA PARTE, ACA TENGO QUE DELIMITAR LA EDAD MAXIMA PARA EL SEXO FEMENINO!!
+		{
+			edadMaximoFem=edad; //ACA ESTA OK TENGO QUE PREGUNTAR LA EDAD MAXIMA DEL SEXO FEMENINO
+			nombreMayor=nombre; LA LOGICA ES QUE ACA ESTABLECES EL NOMBRE DE LA PERSONA MAYOR...
+
+		}*/ //OJOOOOOO ESTO ES DE OTRO EJERCICIO!
 	}
 
 	
@@ -65,20 +74,25 @@ while (contador < 4) // OJO ACA ESTA LA FORMA VALIDADA QUE SE USA SIEMPRE PARA S
 	}
 
 	//ACA VAN LAS NOTAS MAS ALTAS Y LAS MAS BAJAS!
+	//el contador puede ser 1 o 0 depende donde lo ubicas! // ACA ES LA EDAD MAXIMA GENERAL...DE HOMBRES Y MUJERES!
+	if (contador ==1) //REVISAR ALGO ESTA MAL...VER!!! OJJJJJJJJJO HABIA PUESTO AL REVES PUSE EDAD= EDADMAXIMO Y ERA AL REVES!!! OJOOO, POR LOS DATOS QUE PEDI EN PROMPT!
+	{
+		edadMaximo = edad;  // ACA LO PUSE AL REVES Y NO ANDABA! OJO, YO PEDI EDAD POR PROMPT!
+		edadMinimo = edad;
+		nombreMayor=nombre; // PARA QUE LO HAGA TAMBIEN EN EL PRIMER INTENTO...OJOOOO...TIENE QUE ESTAR ACA TAMBIEN...
+	}
+	else if (edad > edadMinimo)
+	{
+		edadMaximo = edad;
+		nombreMayor= nombre; //OJOOOOO SE DECLARA UNA NUEVA VARIABLE Y SE LE ASIGNA A NOMBRE...
+		
+		// if (sexo== "m")
+	}
+	else if (edad < edadMaximo)
+	{
+		edadMinimo = edad;
+	}
 
-	if (contador ==1) //REVISAR ALGO ESTA MAL...VER!!!
-		{
-			edad=edadMaximo;
-			edad=edadMinimo;
-		}
-		else if (edad > edadMinimo)
-		{
-			edad=edadMaximo;
-		}
-		else if (edad < edadMaximo)
-		{
-			edad =edadMinimo;
-		}
 
 }
 
